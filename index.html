@@ -7,6 +7,7 @@ $$Y = f(\sum wx + b )$$
 <p>Activation functions are the sole reason why our Neural Network can fit non-linear data. Consider the network without activation functions, the final output would be a bunch of matrix multiplications \(Y = W3 (W2 * (W1 * x)) = W * x\) which is linear.</p>
 <p>Once we calculate our final output \(\hat{Y}\) at the output layer, we use loss function to find how good/bad this output is with respect to our true output Y. It basically defines how much to penalize the model for wrong predictions. There are various loss functions, some of which are listed <a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">here</a>. If \(l(x)\) is some loss function the the loss L is defined as - </p>
 $$L = l(\hat{Y} , Y)$$
+<p>I hope now you have an brief overview of what the Neural network is doing. Let's look into the detail the code and the math behind training of the model. </p>
 <h3>Training Neural Network</h3>
-Training a Neural Network means to find the set of weights and biases such that the model reduces the losses.
+Training a Neural Network means to find the set of weights and biases such that the model has the minimum loss from our loss function. Lets consider the set of non linear points below - 
 
