@@ -5,6 +5,7 @@
 <p>So what does the neuron exactly do? It calculates a “weighted sum” of its input, adds a bias and then the activation function decides whether it should be “fired” or not. There are various types of activation functions, you can find a detailed list <a href="https://en.wikipedia.org/wiki/Activation_function#Comparison_of_activation_functions">here</a>. The value of output Y from the neuron can be anything ranging from -inf to +inf depending on the activation function. Consider \(f(x)\) is the activation function then the output from the neuron would be - </p>
 $$Y = f(\sum wx + b )$$
 <p>Activation functions are the sole reason why our Neural Network can fit non-linear data. Consider the network without activation functions, the final output would be a bunch of matrix multiplications \(Y = W3 (W2 * (W1 * x)) = W * x\) which is linear.</p>
+<p>Once we calculate our final output \(\hat{Y}\) at the output layer, we use loss function to find how good/bad this output is with respect to our true output Y. It basically defines how much to penalize the model for wrong predictions. There are various loss functions, some of which are listed <a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification">here</a></p>
 <h3>Training Neural Network</h3>
-
+Training a Neural Network means to find the set of weights and biases such that the model reduces the losses.
 
