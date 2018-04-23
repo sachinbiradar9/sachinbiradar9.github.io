@@ -2,6 +2,19 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<div class="w3-container">
+ <div class="w3-bar w3-light-grey">
+    <a href="#" class="w3-bar-item w3-button">About Me</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Dropdown <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      </div>
+    </div>
+  </div>
+</div>
 <h2>Neural Network</h2>
 <p>One of the major weaknesses of perceptron (single neuron) is that they are linear! Namely, they are unable to learn arbitrary decision boundaries. One approach of solving this is to chain together a collection of perceptrons to build a <i>Neural Network</i>. An example of a neural network is shown in the figure below. Here, you can see 2 inputs (features) that are fed into 4 hidden units. These hidden units are then fed in to 2 output units. Each edge in this figure corresponds to a different weight. Please note that each unit in hidden layer and output layer also gets a bias term which I have omitted in the figure to make it look clean.</p>
 <img style="max-width: 100%;" src="/images/neural_network.png"/>
