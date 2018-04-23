@@ -1,4 +1,5 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <h2>Neural Network</h2>
 <p>One of the major weaknesses of perceptron is that they are linear! Namely, they are unable to learn arbitrary decision boundaries. One approach of solving this is to chain together a collection of perceptrons to build a <i>Neural Network</i>. An example of a neural network is shown in the figure below. Here, you can see 2 inputs (features) that are fed into 4 hidden units. These hidden units are then fed in to 2 output units. Each edge in this figure corresponds to a different weight. Please note that each unit in hidden layer and output layer also gets a bias term which I have omitted in the figure to make it look clean.</p>
 <img max-width="100%" src="/images/neural_network.png"/>
@@ -9,5 +10,9 @@ $$Y = f(\sum wx + b )$$
 $$L = l(\hat{Y} , Y)$$
 <p>I hope now you have an brief overview of what the Neural network is doing. Let's look into the detail the code and the math behind training of the model. </p>
 <h3>Training Neural Network</h3>
-Training a Neural Network means to find the set of weights and biases such that the model has the minimum loss from our loss function. Lets consider the set of non linear points below - 
-
+<p>Training a Neural Network means to find the set of weights W and biases b such that the model has the minimum loss from our loss function. Lets train our model on the following non-linearly distributed data points - </p>
+<code class="prettyprint">
+np.random.seed(0)
+X, y = sklearn.datasets.make_moons(200, noise=0.20)
+plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
+</code>
