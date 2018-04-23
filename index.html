@@ -11,7 +11,7 @@ $$L = l(\hat{Y} , Y)$$
 <p>I hope now you have an brief overview of what the Neural network is doing. Let's look into the detail the code and the math behind training of the model. </p>
 <h3>Training Neural Network</h3>
 <p>Training a Neural Network means to find the set of weights W and biases b such that the model has the minimum loss from our loss function. Lets train our model on the following non-linearly distributed data points - </p>
-<pre class="prettyprint">
+<pre overflow="scroll" class="prettyprint">
 np.random.seed(0)
 X, y = sklearn.datasets.make_moons(200, noise=0.20)
 plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
