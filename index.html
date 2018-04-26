@@ -35,11 +35,6 @@ np.random.seed(0)
 X, y = sklearn.datasets.make_moons(200, noise=0.20)
 plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
 </pre>
-<img style="max-width: 100%;" src="/images/neural_network.png"/>
+<img style="max-width: 100%;" src="/images/non_linear_data.png"/>
 <p>Our goal here is to predict correct class Red or Blue given the <i>x,y</i> co-ordinates. The data as you can see is not linearly separable, we can’t draw a straight line that separates the two classes. Let’s now build a 3-layer neural network with one input layer, one hidden layer, and one output layer as shown in the figure above. The number of nodes in the input layer is determined by the dimensionality of our data hence we have 2 nodes (one for each co-ordinate). Similarly, the number of nodes in the output layer is determined by the number of classes which is also 2 (one for Red class and one for Blue). The input to the network will be <i>x</i> and y coordinates and its output will be two probabilities, one for Red class and one for Blue class. Let's initialize the weights and biases W1, W2, b1 and b2. Please note that dimensions of the weights vectors also depend on the dimensions of the hidden layer.</p>
-<pre style="overflow:scroll;" class="prettyprint">
-np.random.seed(0)
-X, y = sklearn.datasets.make_moons(200, noise=0.20)
-plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
-</pre>
  </div>
