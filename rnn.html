@@ -1,0 +1,45 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<div>
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT ME</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Deep Learning<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/index.html" class="w3-bar-item w3-button">Neural Network</a>
+        <a href="/rnn.html" class="w3-bar-item w3-button">RNN</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<div class="w3-container w3-content">
+<h2>Neural Network</h2>
+<p>One of the major weaknesses of perceptron (single neuron) is that they are linear! Namely, they are unable to learn arbitrary decision boundaries. One approach of solving this is to chain together a collection of perceptrons to build a <i>Neural Network</i>. An example of a neural network is shown in the figure below. Here, you can see 2 inputs (features) that are fed into 4 hidden units. These hidden units are then fed in to 2 output units. Each edge in this figure corresponds to a different weight. Please note that each unit in hidden layer and output layer also gets a bias term which I have omitted in the figure to make it look clean.</p>
+<img style="max-width: 100%;" src="/images/neural_network.png"/>
+<p>So what does the neuron exactly do? It calculates a “weighted sum” of its input, adds a bias and then the activation function decides whether it should be “fired” or not. There are various types of activation functions, you can find a detailed list <a target="_blank" href="https://en.wikipedia.org/wiki/Activation_function#Comparison_of_activation_functions">here</a>. The value of output Y from the neuron can be anything ranging from -inf to +inf depending on the activation function. Consider \(f(x)\) is the activation function then the output from the neuron would be - </p>
+$$Y = f(\sum wx + b )$$
+<p>Activation functions are the sole reason why our Neural Network can fit non-linear data. Consider the network without activation functions, the final output would be a bunch of matrix multiplications \(Y = W3 (W2 * (W1 * x)) = W * x\) which is linear.</p>
+<p>Once we calculate our final output \(\hat{Y}\) at the output layer, we use loss function to find how good/bad this output is with respect to our true output Y. It basically defines how much to penalize the model for wrong predictions. There are various loss functions, some of which are listed <a target="_blank" href="https://en.wikipedia.org/wiki/Loss_functions_for_classification" >here</a>. If \(l(x)\) is some loss function the the loss L is defined as - </p>
+$$L = l(\hat{Y} , Y)$$
+<p>I hope now you have an brief overview of what the Neural network is doing. Let's look into the detail the code and the math behind training of the model. </p>
+<h3>Training Neural Network</h3>
+<p>Training a Neural Network means to find the set of weights W and biases b such that the model has the minimum loss from our loss function. Lets train our model on the following non-linearly distributed data points - </p>
+<pre style="overflow:scroll;" class="prettyprint">
+np.random.seed(0)
+X, y = sklearn.datasets.make_moons(200, noise=0.20)
+plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
+</pre>
+<img style="max-width: 100%;" src="/images/neural_network.png"/>
+<p>Our goal here is to predict correct class Red or Blue given the <i>x,y</i> co-ordinates. The data as you can see is not linearly separable, we can’t draw a straight line that separates the two classes. Let’s now build a 3-layer neural network with one input layer, one hidden layer, and one output layer as shown in the figure above. The number of nodes in the input layer is determined by the dimensionality of our data hence we have 2 nodes (one for each co-ordinate). Similarly, the number of nodes in the output layer is determined by the number of classes which is also 2 (one for Red class and one for Blue). The input to the network will be <i>x</i> and y coordinates and its output will be two probabilities, one for Red class and one for Blue class. Let's initialize the weights and biases W1, W2, b1 and b2. Please note that dimensions of the weights vectors also depend on the dimensions of the hidden layer.</p>
+<pre style="overflow:scroll;" class="prettyprint">
+np.random.seed(0)
+X, y = sklearn.datasets.make_moons(200, noise=0.20)
+plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
+</pre>
+ </div>
